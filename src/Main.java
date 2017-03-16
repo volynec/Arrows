@@ -13,7 +13,7 @@ public class Main {
     public static final String OUTPUT_FILE = "OUTPUT.TXT";
     public static int n = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         try {
             parseFileAndCalculate();
             writeFile();
@@ -25,8 +25,9 @@ public class Main {
             System.out.println("Произошла неизвестная ошибка! ");
             System.out.println("Подробная отладочная информация: ");
             e.printStackTrace();
-        }
 
+        }
+        writeFile();
     }
 
     private static void parseFileAndCalculate() throws IOException {
